@@ -7,7 +7,7 @@ import {ItemListContainer} from './Components/ItemListContainer'
 function App() {
   return (
     <ChakraProvider>
-       
+      
        <Navbar />
        <ItemListContainer greeting="Bienvenidos a Hanna Baking"  />
     </ChakraProvider>

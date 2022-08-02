@@ -4,7 +4,7 @@ import { CartWidget } from '../CartWidget'
 
 const Navbar = () =>{
     return(
-        <HStack>
+        <HStack as = "nav">
           <img src={Logo} alt="" width="100px" />
           <Spacer />
           <HStack>
