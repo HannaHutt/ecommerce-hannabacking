@@ -1,13 +1,15 @@
-
- 
+import  img1 from "../assets/Pictures/lemon-pie.jpg";
+import img2 from "../assets/Pictures/imperial-ruso.jpg";
+import img3 from "../assets/Pictures/matilda.jpg";
+ import img4 from "../assets/Pictures/torta-clasica.jpg";
 export const products = [
     {
         id:1,
-        image: "../assets/Pictures/imperial-ruso.jpg",
-        product: "Torta Rogel",
+        Image: img1,
+        product: "Tarta Lemon Pie",
         category:"stock diario",
-        description:"Torta de finas capas rellena con dulce de leche y nueces, cubierta de merengue italiano",
-        price:3000,
+        description:"Masa sablee con relleno de curd de limon",
+        price:2000,
         stock:5,
         initial:1,
         config:{
@@ -16,7 +18,7 @@ export const products = [
     },
     {
         id:2,
-        image:"",
+        Image:img2,
         product: "Torta Imperial",
         category:"stock diario",
         description:"Bizcochuelo de vainilla, relleno con dulce de leche, merenguitos y crema chantilly",
@@ -30,7 +32,7 @@ export const products = [
     },
     {
         id:3,
-        image:"",
+        Image:img3,
         product: "Torta Matilda",
         category:"encargo",
         description:"Bizcochuelo de chocolate, relleno con dulce de leche, mousse de chocolate",
@@ -44,7 +46,7 @@ export const products = [
     },
     {
         id:4,
-        image:"",
+        Image:img4,
         product: "Torta Clasica ",
         category:"stock diario",
         description:"Bizcochuelo de vainilla, relleno con dulce de leche,  crema chantilly",
