@@ -9,15 +9,19 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 function App() {
   return (
     <ChakraProvider>
-      <BrowserRouter>
-      <Navbar />
-      <Routes>
+      <BrowserRouter >
+        <Navbar />
+          <Routes>
 
-       <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Hanna Baking"  />} />
-       <Route path="/category/:category" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
-       <Route path="/product/:id" element={<ItemDetailContainer /> } />
+             <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Hanna Baking"  />} />
+             <Route path="/category/:category" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
+             <Route path="/Contacto/:contact" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
+             <Route path="/Nosotros/:about" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
+             <Route path="/Productos/:products" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
+             
+             <Route path="/product/:id" element={<ItemDetailContainer /> } />
 
-      </Routes>
+          </Routes>
        
       
       </BrowserRouter>
