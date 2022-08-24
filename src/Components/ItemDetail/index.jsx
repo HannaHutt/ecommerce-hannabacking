@@ -1,4 +1,4 @@
-import { VStack, Center, Text, Image, Heading, Select, HStack, Button, list, Img  } from "@chakra-ui/react"
+import { VStack, Center, Text, Image, Heading, Select, HStack, Button, list, Img } from "@chakra-ui/react"
 import { useState } from 'react'
 import { FaCreditCard, FaRegCreditCard, FaHeart } from "react-icons/fa"
 import { NavLink } from "react-router-dom"
@@ -41,7 +41,17 @@ const ItemDetail = ({ listProduct }) => {
                     </HStack>
 
                 </>}
-                <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
+                {
+                    isAdded ? 
+                     <NavLink to="/cart">
+                        <Button colorScheme='pink' size='md'>
+                            Ir al Carrito
+                        </Button>
+                     </NavLink>
+                     :
+                     <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
+                }
+                
             
           </VStack>
         </Center>
