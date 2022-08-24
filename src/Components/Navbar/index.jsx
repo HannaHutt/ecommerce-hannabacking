@@ -1,13 +1,15 @@
-import { HStack, Spacer, Link } from '@chakra-ui/react'
+import { HStack, Spacer, Link, RangeSliderFilledTrack } from '@chakra-ui/react'
 import Logo from '../../assets/Pictures/Logo.jpg'
 import { CartWidget } from '../CartWidget'
 import { NavLink } from "react-router-dom"
 
+
 const Navbar = () =>{
     return(
+
         <HStack as = "nav">
           <NavLink to ="/">
-            <img src={Logo} alt="" width="100px" />
+            <img src={Logo} alt="" width="200px" />
           </NavLink>
           <Spacer />
           <HStack>

@@ -18,7 +18,8 @@ function App() {
              <Route path="/Contacto/:contact" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
              <Route path="/Nosotros/:about" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
              <Route path="/Productos/:products" element={<ItemListContainer greeting= "Bienvenidos a Hanna Baking" /> } />
-             
+             <Route path="/category/torta/product/:id"element={<ItemDetailContainer /> } />
+             <Route path="/category/tarta/product/:id"element={<ItemDetailContainer /> } />
              <Route path="/product/:id" element={<ItemDetailContainer /> } />
 
           </Routes>

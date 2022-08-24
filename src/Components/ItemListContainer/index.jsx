@@ -1,4 +1,4 @@
-import { Heading, Text } from '@chakra-ui/react'
+import { Heading, Text , Center, HStack } from '@chakra-ui/react'
 import { ItemCount } from '../ItemCount'
 import { products } from '../../utils/products'
 import { customFetch } from '../../utils/customFetch'
@@ -32,16 +32,37 @@ const ItemListContainer = ({ greeting }) => {
 
    return (
       <>
-         <Heading>{greeting}</Heading>
-         {!loading
-            ?
-            <ItemList listProduct={listProduct} />
-            :
-            <Text>Cargando...</Text>
-         }
-
-         { <ItemCount initial={1} stock={5} onAdd={() => {}}/>}
+      <Heading>{greeting}</Heading>
+      {!loading
+         ?
+         <ItemList listProduct={listProduct} />
+         :
+         <Text>Cargando...</Text>
+      }
       </>
+
+      
+
+      
+      
+      
+         
+            
+           
+         
+            
+         
+      
+      
+         
+         
+
+         
+         
+         
+        
+
+      
 
    )
 }
