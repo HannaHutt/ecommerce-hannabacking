@@ -1,4 +1,4 @@
-import { Heading, Text , Center, HStack } from '@chakra-ui/react'
+import { Heading, Text, Center, HStack, Flex } from '@chakra-ui/react'
 import { ItemCount } from '../ItemCount'
 import { products } from '../../utils/products'
 import { customFetch } from '../../utils/customFetch'
@@ -11,58 +11,39 @@ const ItemListContainer = ({ greeting }) => {
    const [listProduct, setListProduct] = useState([])
    const [loading, setLoading] = useState(true)
 
-   const {category} = useParams()
-  
+   const { category } = useParams()
+
 
    useEffect(() => {
       setLoading(true)
       customFetch(products)
          .then(res => {
-            if (category){
+            if (category) {
                setLoading(false)
                setListProduct(res.filter(prod => prod.category === category))
 
-            }else{
+            } else {
                setLoading(false)
                setListProduct(res)
             }
-            
+
          })
    }, [category])
 
    return (
-      <>
-      <Heading>{greeting}</Heading>
-      {!loading
-         ?
-         <ItemList listProduct={listProduct} />
-         :
-         <Text>Cargando...</Text>
-      }
-      </>
+      <Flex color='pink'>
 
-      
+         <Center>
+            <Heading >{greeting}</Heading>
+            {!loading
+               ?
+               <ItemList listProduct={listProduct} />
+               :
+               <Text>Cargando...</Text>
+            }
+         </Center>
 
-      
-      
-      
-         
-            
-           
-         
-            
-         
-      
-      
-         
-         
-
-         
-         
-         
-        
-
-      
+      </Flex>
 
    )
 }

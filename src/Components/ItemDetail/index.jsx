@@ -30,7 +30,7 @@ const ItemDetail = ({ listProduct }) => {
             <Text className='bold' fontSize='2xl'>${price}</Text>
             <Text>Stock:{stock}</Text>
             <HStack>
-                <FaCreditCard /> <FaCreditCard />
+                <FaCreditCard /> <FaRegCreditCard />
             </HStack>
             <Text fontSize='xs'>{description}</Text>
             {config.color &&
