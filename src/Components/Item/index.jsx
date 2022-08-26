@@ -8,7 +8,7 @@ const Item = ({product}) => {
    /* console.log(product)*/
 
     return(
-        <VStack boxShadow='lg' p='6' rounded='md' bg='white' m="15px" minWidth="275px">
+        <VStack boxShadow='lg' p='6' rounded='md' bg='pink' m="15px" minWidth="275px">
             <Image src={product.image} alt={product.product}  />
             <Text>{product.product}</Text>
             <Text>${product.price}</Text>
