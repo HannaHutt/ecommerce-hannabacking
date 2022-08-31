@@ -8,12 +8,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CartContextProvider } from './context/CartContext'
 import { Cart } from './Components/Cart'
 
+
+
+
+
 function App() {
   return (
     <ChakraProvider>
       <CartContextProvider>
         <BrowserRouter >
           <Navbar />
+          
           <Routes>
 
             <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Hanna Baking" />} />
