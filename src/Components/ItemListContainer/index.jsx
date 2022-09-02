@@ -1,5 +1,4 @@
 import { Heading, Text, Center, HStack, Flex } from '@chakra-ui/react'
-import { ItemCount } from '../ItemCount'
 import { products } from '../../utils/products'
 import { customFetch } from '../../utils/customFetch'
 import { useState, useEffect } from 'react'
@@ -22,11 +21,11 @@ const ItemListContainer = ({ greeting }) => {
    useEffect(() => {
       
       const productosCollection = collection(db, "Products")
-
       const consulta = getDocs(productosCollection)
+      console.log(consulta)
 
       consulta
-      .then(snapshot => {
+      .then(snapshot=>{
          console.log(snapshot)
       })
       .catch(err=>{
