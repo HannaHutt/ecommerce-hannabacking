@@ -4,48 +4,59 @@ import { customFetch } from '../../utils/customFetch'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList'
 import { useParams } from 'react-router-dom'
-import { collection, getDocs } from 'firebase/firestore'
-import {db} from '../../Firebase'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from '../../Firebase'
 
 
 
 
 const ItemListContainer = ({ greeting }) => {
-   
-   const [listProduct, setListProduct] = useState([])
+
+   const [listProduct, setProductos] = useState([])
    const [loading, setLoading] = useState(true)
-   
+   const { id } = useParams()
+
    const { category } = useParams()
-   
-   
+
+
    useEffect(() => {
-      
+
       const productosCollection = collection(db, "Products")
+      /*const filtro = query(productosCollection,where("category","==",id))
+      console.log(filtro)*/
       const consulta = getDocs(productosCollection)
-      console.log(consulta)
+
 
       consulta
-      .then(snapshot=>{
-         console.log(snapshot)
-      })
-      .catch(err=>{
-         console.log(err)
-      })
-    
-
-      setLoading(true)
-      customFetch(products)
-         .then(res => {
-            if (category) {
-               setLoading(false)
-               setListProduct(res.filter(prod => prod.category === category))
-
-            } else {
-               setLoading(false)
-               setListProduct(res)
-            }
-
+         .then(snapshot => {
+            const producto = snapshot.docs.map(doc => {
+               return {
+                  ...doc.data(),
+                  id: doc.id
+               }
+            })
+            setProductos(producto)
+            setLoading(false)
          })
+         .catch(err => {
+            console.log(err)
+         })
+
+         console.log(listProduct)
+
+      // setLoading(true)
+      // customFetch(products)
+      //    .then(res => {
+      //       if (category) {
+      //          setLoading(false)
+      //          setProductos(res.filter(prod => prod.category === category))
+
+      //       } else {
+      //          setLoading(false)
+      //          setProductos(res)
+      //       }
+
+      //    })
    }, [category])
 
    return (

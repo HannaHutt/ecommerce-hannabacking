@@ -1,11 +1,8 @@
 import { VStack,Button,Text,Image,Link } from '@chakra-ui/react'
 import { NavLink } from "react-router-dom"
 
-
-
-
 const Item = ({product}) => {
-   /* console.log(product)*/
+    
 
     return(
         <VStack boxShadow='lg' p='6' rounded='md' bg='pink' m="15px" minWidth="275px">
